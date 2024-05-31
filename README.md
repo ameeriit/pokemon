@@ -12,12 +12,10 @@ git clone https://github.com/ameeriit/pokemon
 
 ## Setup
 
-```
-> cd pokemon
-> pnpm install
-> Add the environment variables (but for this i have added a static value for now)
-> pnpm run dev
-```
+1. cd pokemon
+2. pnpm install
+3. Add the environment variables (but for this i have added a static value for now)
+4. pnpm run dev
 
 ## Implementation Details
 
