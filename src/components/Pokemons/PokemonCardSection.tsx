@@ -18,14 +18,7 @@ export default function PokemonCardSection() {
     return response;
   };
 
-  const {
-    data,
-    error,
-    fetchNextPage,
-    hasNextPage,
-    isFetching,
-    isFetchingNextPage,
-  } = useInfiniteQuery(
+  const { data, error, fetchNextPage, hasNextPage } = useInfiniteQuery(
     {
       queryKey: ["pokemonList"],
       queryFn: fetchPokemonList,
