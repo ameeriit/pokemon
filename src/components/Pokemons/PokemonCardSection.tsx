@@ -18,7 +18,14 @@ export default function PokemonCardSection() {
     return response;
   };
 
-  const { data, error, fetchNextPage, hasNextPage } = useInfiniteQuery(
+  const {
+    data,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
+    isFetchingNextPage,
+  } = useInfiniteQuery(
     {
       queryKey: ["pokemonList"],
       queryFn: fetchPokemonList,
@@ -61,9 +68,13 @@ export default function PokemonCardSection() {
         hasMore={!!hasNextPage}
         loader={localSearchTerm && !(<LoadingSpinner />)}
         endMessage={
-          <span className="bg-teal-600 text-center block mb-12 text-slate-200 text-xl py-4">
-            Yay You have seen it all
-          </span>
+          isFetching &&
+          isFetchingNextPage &&
+          !(
+            <span className="bg-teal-600 text-center block mb-12 text-slate-200 text-xl py-4">
+              Yay You have seen it all
+            </span>
+          )
         }
       >
         {/* pokemon details section */}
