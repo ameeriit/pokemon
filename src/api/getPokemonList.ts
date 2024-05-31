@@ -1,11 +1,14 @@
 import axios from "axios";
 import { apiClient } from "../config/axios";
 
-export async function getPokemonList() {
+export async function getPokemonList(queryParams: {
+  limit: number;
+  offset: number;
+}) {
   try {
-    const response = await apiClient.get("pokemon");
+    const response = await apiClient.get(`pokemon/`, { params: queryParams });
     const spellsList = response.data;
-    return spellsList;
+    return { ...spellsList, prevOffset: queryParams.offset };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error(

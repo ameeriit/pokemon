@@ -1,6 +1,14 @@
 ---
-import PokemonDetailsSection from "../components/PokemonDetailsSection";
+import { SEO } from "astro-seo";
+
+import PokemonCardSection from "../components/Pokemons/PokemonCardSection";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
+
+const seoTitle = "Pokédex - Discover All Pokémon";
+const seoDescription =
+  "Explore the complete list of Pokémon with detailed information on stats, abilities, and more.";
+const imageUrl =
+  "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png";
 ---
 
 <html lang="en">
@@ -9,11 +17,36 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <SEO
+      title={seoTitle}
+      description={seoDescription}
+      openGraph={{
+        basic: {
+          title: seoTitle,
+          type: "website",
+          image: imageUrl,
+        },
+      }}
+      twitter={{
+        creator: "@jonasmerlins1",
+        card: "summary_large_image",
+        image: imageUrl,
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          { name: "twitter:image", content: imageUrl },
+          { name: "twitter:title", content: seoTitle },
+          { name: "twitter:description", content: seoDescription },
+        ],
+      }}
+    />
+    <title>{seoTitle}</title>
   </head>
   <body>
     <MySiteLayout>
-      <PokemonDetailsSection client:load />
+      <h1 class="py-6 text-6xl font-semibold text-center">All Pokémons</h1>
+      <PokemonCardSection client:load />
     </MySiteLayout>
   </body>
 </html>

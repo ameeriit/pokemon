@@ -32,3 +32,12 @@ export interface PokemonDetailsType {
   types: Type[];
   stats: Stat[];
 }
+
+export interface PokemonListType {
+  name: string;
+  url: string;
+}
+
+export interface PokemonListProps {
+  searchTerm: string;
+}
