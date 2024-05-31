@@ -13,13 +13,17 @@ import type {
 } from "../../../types/interface";
 
 export default function PokemonCard({ url }: PokemonDetailsProps) {
-  const { data: pokemonDetails } = useQuery<PokemonDetailsType>(
+  const { data: pokemonDetails, isPending } = useQuery<PokemonDetailsType>(
     {
       queryKey: ["spellDetailsData", url],
       queryFn: () => getPokemonDetails(url),
     },
     client
   );
+
+  if (isPending) {
+    return <div className="shimmer-animation" />;
+  }
 
   return (
     <div className="border-teal border-[1px] border-solid rounded-2xl shadow-sm px-6 pt-3 pb-4 bg-teal-50 hover:cursor-pointer">
