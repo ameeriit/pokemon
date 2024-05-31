@@ -1,47 +1,40 @@
-# Astro Starter Kit: Minimal
+# Pokémon Repository
 
-```sh
-npm create astro@latest -- --template minimal
+This repository contains a Pokémon application built using modern web development technologies. The app features data fetching, infinite scrolling, search filtering, SEO optimization, and a sleek UI design.
+
+## Clone The Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/ameeriit/pokemon
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Setup
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> cd pokemon
+> pnpm install
+> Add the environment variables (but for this i have added a static value for now)
 
-## 🚀 Project Structure
+## Implementation Details
 
-Inside of your Astro project, you'll see the following folders and files:
+1. HTTP Requests: Utilizes axios for making HTTP requests.
+2. Data Fetching and Caching: Implements tanstack query for efficient client-side data fetching and caching.
+3. Infinite Scroll: Supports infinite scroll to ensure smooth UI and avoid initial load times with large datasets.
+4. Search Filter: Includes a search filter to easily find specific cards.
+5. Debouncing: Uses use-debounce package to debounce the search filter, improving performance.
+6. SEO Optimization: Leverages astro-seo package for SEO enhancements. Currently, static data is used, but it can be made dynamic. OpenGraph and Twitter support are included.
+7. UI Design: Utilizes Tailwind CSS for styling and a modern, responsive design.
+8. Frameworks: Built with React and Astro, using the islands architecture for improved performance.
+9. Type Safety: Written in TypeScript to ensure type safety and improve code quality.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Technologies Used
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. React: For building the user interface.
+2. Astro: For building static sites with server-side rendering and islands architecture.
+3. TypeScript: For type safety.
+4. Tailwind CSS: For styling.
+5. axios: For making HTTP requests.
+6. tanstack query: For data fetching and caching.
+7. use-debounce: For debouncing input fields.
+8. astro-seo: For SEO optimization.
